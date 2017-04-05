@@ -16,6 +16,7 @@ app.controller('BirdsController', ['$scope', '$http', function($scope, $http) {
 
     $scope.createBird = function() {
         var newBird = $scope.formData;
+        console.log("new bird" + newBird);
         $http.post('/birds', newBird)
         .then(function (response) {
             $scope.formData = {};

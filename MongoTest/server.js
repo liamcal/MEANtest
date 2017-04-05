@@ -49,7 +49,7 @@ app.get('/birds', function (req, res) {
 app.post('/birds', function(req, res) {
     console.log("New bird POST received");
     console.log(req.body);
-    Bird.create(req.body).exec(function(err, birds) {
+    Bird.create(req.body, function(err, birds) {
         if (err)
             res.send(err)
 
