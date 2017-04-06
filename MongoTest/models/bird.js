@@ -1,5 +1,6 @@
 /* Import mongoose Schema */
-var Schema = require('mongoose').Schema;
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema;
 
 /* Specift our Bird schema */
 var birdSchema = new Schema({
