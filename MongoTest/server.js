@@ -1,13 +1,17 @@
-const express = require('express'); //Express JS Webframework
-const bodyParser = require('body-parser');  //
+/* Import Express JS Webframework and required middleware */
+const express = require('express');
+const bodyParser = require('body-parser');
 
+/* Import mongoDB and mongoose */
 const mongoDB = require('mongodb');
 const mongoose = require('mongoose');
-const mongoURL = 'mongodb://localhost:27017/birdsong_db';
+const mongoURL = 'mongodb://localhost:27017/birdsong_db'; //The location of the database (Will create if doesn't exist)
 
+/* Import our own Bird model */
 const Bird = require('./models/bird');
 
-const app = express(); //Create the backend application
+/* Create the backend application */
+const app = express();
 
 /* Setup Bodyparser to be able to parse url and application json */
 app.use(bodyParser.urlencoded({extended : true}))
@@ -45,15 +49,14 @@ app.get('/birds', function (req, res) {
     });
 });
 
-
+/* Post request, used to add new birds to DB */
 app.post('/birds', function(req, res) {
-    console.log("New bird POST received");
-    console.log(req.body);
-    Bird.create(req.body, function(err, birds) {
+    var birdDetails = req.body;
+    /* Create a new Bird object and add to DB */
+    Bird.create(birdDetails, function(err, birds) {
         if (err)
             res.send(err)
-
-        console.log('saved to db');
+        /* Retrieve the updated list of birds and send as response */
         Bird.find(function(err, birds) {
             if (err)
                 res.send(err)
@@ -63,12 +66,14 @@ app.post('/birds', function(req, res) {
 });
 
 
+/* Delete request, used to remove existing birds from DB */
 app.delete('/birds/:bird_id', function(req, res) {
-    console.log("Deleting a bird");
-    Bird.remove().where({ _id : req.params.bird_id}).exec(function(err, todo) {
+    var idToDelete = req.params.bird_id;
+    /* Remove the bird with matching ID */
+    Bird.remove().where({ _id : idToDelete}).exec(function(err, todo) {
         if (err)
             res.send(err)
-        console.log('saved to db');
+        /* Retrieve the updated list of birds and send as response */
         Bird.find(function(err, birds) {
             if (err)
                 res.send(err)
