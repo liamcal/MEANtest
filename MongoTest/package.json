@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.4",
     "angular-audio": "^1.7.3",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
