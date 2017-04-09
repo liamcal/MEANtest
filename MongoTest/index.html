@@ -27,10 +27,12 @@
         </div>
         <p>Name: {{ formData.name }}</p>
         <p>Bird: {{ formData.bird }}</p>
-        <form>
-            <input type="text" placeholder="name" name="name" ng-model = "formData.name">
-            <input type="text" placeholder="bird" name="bird" ng-model = "formData.bird">
-            <button type="submit" ng-click = "createBird()">Submit</button>
-        </form>
+        <div>
+            <form>
+                <input type="text" placeholder="name" name="name" ng-model = "formData.name">
+                <input type="text" placeholder="bird" name="bird" ng-model = "formData.bird">
+                <button type="submit" ng-click = "createBird()">Submit</button>
+            </form>
+        </div>
 </body>
 </html>
