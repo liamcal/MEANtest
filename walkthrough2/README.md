@@ -121,7 +121,7 @@ $scope.makeBig = function() {
     for (var i = 0; i < $scope.birds.length; i++) {
         $scope.birds[i].name = $scope.birds[i].name.toUpperCase();
     }
-};
+}
 ```
 
 This function converts each of the names of the birds to upper-case.
@@ -142,8 +142,8 @@ Our next step is to be able to process more detailed information provided by the
     $scope.formData = {};
     $scope.addBird = function() {
         $scope.birds.push($scope.formData);
-        $scope.formData = {};
-    }
+        $scope.formData = {}
+    };
 ```
 
 Here we have an object, which we will use to hold the current information provided in the form, and a function which pushes that data into the birds array, before clearing the object to start over;
@@ -160,10 +160,12 @@ Now let's create the form to make use of this new controller functionality.
 
 You should be able to spot the button with `ng-click` to call the addBird function like before. The new and super-useful thing here is the use of the `ng-model` directive. This allows us to specify a two-way binding between the contents of each field, and a property of the `formData` object. As the user types into either of these fields, `formData` is automatically updated to match the contents of the field. That's all there is to it! You should be able to go to page and add some new birds to the list.
 
-## Challenge
+## Challenge and Conclusion
 
 Try and add the ability to remove birds from the list. To do this, create a delete function in the controller which will take the name of a bird as a parameter, and remove all birds with that name from the list. Add a delete button alongside the p tag inside the `ng-repeat`, which triggers the new delete method using the name of the current bird. If you want to see how I completed this, check the source code that came with this walkthrough on GitHub.
 
+*Hint: It's probably easier to create a new list containing all the birds that need to remain and then set it to be displayed rather than try and remove directly from the existing list*
+
 Another thing you'll notice is that none of our changes are persistent. Every time we refresh the page, the list reverts back to the original three birds. This is because our javascript get's reloaded and the contents of the birds list goes back to its initial state.
 
-To keep our changes persistent, we're going to need a database.
+To keep our changes persistent, we're going to need a database, which I'll cover in the next walkthrough.
