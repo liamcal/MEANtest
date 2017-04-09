@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="birds">
+<head>
+  <meta charset="UTF-8">
+  <title>BirdSong</title>
+  <script type = "text/javascript" src="node_modules/angular/angular.js"></script>
+  <script type = "text/javascript" src = "app.js"></script>
+</head>
+<body ng-controller="BirdsController">
+  <p>Welcome to Birdsong!</p>
+  <div>
+      <div ng-repeat="bird in birds">
+          <p>{{ bird.name }}: {{ bird.species }}</p>
+      </div>
+  </div>
+  <button ng-click="makeBig()">Enlarge Birds!</button>
+
+  <form>
+      <input type="text" placeholder="name" name="name" ng-model = "formData.name">
+      <input type="text" placeholder="species" name="species" ng-model = "formData.species">
+      <button type="submit" ng-click = "addBird()">Submit</button>
+  </form>
+</body>
+</html>
