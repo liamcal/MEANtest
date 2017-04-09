@@ -1,5 +1,6 @@
 # MEANtest
-Playing around with the MEAN JS stack
+
+A collection of walkthroughs and demos from playing around with the MEAN JS stack
 
 Navigate to the project you wish to run
 
@@ -7,6 +8,6 @@ Install dependencies using `npm install` - this will install all node packages s
 
 Run app using nodemon with `npm run dev`
 
-You'll need a `mongod` daemon running too
+In some exampkes you'll need a `mongod` daemon running too
 
 Webserver will run on `localhost:3000`
