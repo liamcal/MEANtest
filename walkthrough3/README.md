@@ -41,7 +41,7 @@ One thing interesting here is that we never actually created the database `walkt
 
 ## Creating a DB model
 
-So we have connected to the database but have no way to interact with it. To do this, we're going to use mongoose to create object models (which are based off a schema). You can think of a model as a representation of a specific object, which will be stored in it's own "table" equivalent in MongoDB. So in our case, we need a model for our birds which we want to store.
+So have connected to the database but have no way to interact with it. To do this, we're going to use mongoose to create object models (which are based off a schema). You can think of a model as a representation of a specific object, which will be stored in it's own "table" equivalent in MongoDB. So in our case, we need a model for our birds which we want to store.
 
 First, create a new directory called `models` in the root directory, and then add a new file called `bird.js` inside the directory.
 
@@ -336,6 +336,6 @@ We've covered a lot in this walkthrough. I'd suggest taking some time to go thro
 
 A possible extension to this walkthrough is adding another text field which allows us to search/filter the results. This will require a slight tweak to the GET portion of the API, and a simple regex, but otherwise there's no new concept.
 
-Currently our "Enlarge Birds" button still only makes changes client-side. To make this update all the entries in the database isn't super easy, but feel free to give it a go. You'll probably need to register a new API handler, as our current set aren't equipped to handle updates very well.
+Currently our "Enlarge Birds" button still only makes changes client-side. To make this update all the entries in the database isn't super easy, but feel free to give it a go. You'll probably need to register a new API handler, as our current set aren't equipped to handle updates very well. (I haven't done this myself yet).
 
 The next walkthrough will (hopefully) cover some user/login state management.
