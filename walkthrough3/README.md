@@ -338,4 +338,6 @@ A possible extension to this walkthrough is adding another text field which allo
 
 Currently our "Enlarge Birds" button still only makes changes client-side. To make this update all the entries in the database isn't super easy, but feel free to give it a go. You'll probably need to register a new API handler, as our current set aren't equipped to handle updates very well. (I haven't done this myself yet).
 
-The next walkthrough will (hopefully) cover some user/login state management.
+I'm not sure if I'll do any more walkthroughs. I think we've covered the basics now. It's possible I might do one more on project file structure and best practices code organisation (but I'm still wrapping my head around that myself.)
+
+I'd strongly encourage people to do further research on the technologies/packages I've discussed if you have time. Also it would probably be quite valuable to play around with extending our little demo in some ways and see if you can add some new features.
