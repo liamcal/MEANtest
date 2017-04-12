@@ -161,6 +161,40 @@ You should get a confirmation message, indicating the server is running and list
 
 So, open up your browser and navigate to `localhost:3000`, and you should see a nice little database demo, which will allow you to add and remove items from a list.
 
+
+## Bonus Round - Atom Editor
+I've been using the Atom text editor to write these guides and the tech prototypes. I think it's pretty cool, so if you don't already have strong feelings about your dev environment (or are interested in trying something new), I figured I might as well walk you through my setup.
+
+First download the appropriate atom file from https://atom.io/. On Windows, run the setup executable, On Mac, unzip the file and add the .app file to your applications folder.
+
+Open Atom, then click "Install A Package". There's many packages you may want, but I'll run through a couple that I think you'll find useful.
+
+### platformio-ide-terminal (2.5)
+
+This is so helpful. It allows you to open up a terminal from inside the editor. What's even better is you can have multiple terminal tabs (so one for mongodb and then another for the server), and be default they open up in your current working directory (so no complex `cd`ing every time you open a terminal.)
+
+Search for the package and click the install button. Make sure you get the stable release and not the beta.
+
+Once it's installed, click on the little plus button in the bottom right corner of your screen. Ta-da! Terminal! You can click the plus button again to launch additional terminals. You can switch between open terminals by clicking the little buttons next to the plus icon.
+
+### Remote-FTP (0.10.7)
+
+This is a useful package which will allow us to directly edit files on the NeCTAR cloud server. It will take a little bit to actually setup the connection, which I'll discuss later. But for now this is worth going ahead and installing.
+
+### Script (3.14.1)
+
+I usually just use the terminal to run any code I write. But there are various packages which you can use to run things like python scripts instead. The most popular of these is Script
+
+### Other packages
+
+There's heaps of other packages in Atom which you might find useful, particular for certain types of development. It's worth browsing the available/popular packages from time to time and you might find something else useful.
+
+### Themes
+
+I quite like the default theme, but if it's not your style there's a number of other themes to choose from and install.
+
+
+
 ## Conclusion
 
 We've installed Node.js and MongoDB, and also setup git for our version control. We're going to need to use a lot more software as we develop our web application, but thankfully, the rest of the packages can be installed easily using `npm`. I'll cover them in later guides, where we setup our own web server from scratch.
