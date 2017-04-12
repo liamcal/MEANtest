@@ -35,7 +35,7 @@ If Node and npm have been installed correctly, you should see the version number
 
 MongoDB is our noSQL database system. We can run the database on a free service provider, but for simplicity during learning and early development, we'll just run the database locally.
 
-###Windows
+### Windows
 
 On Windows, navigate to http://mongodb.com/download-center and download the first of the available windows options. (Even though it says Windows Server, these are compatible with regular Windows too.)
 
