@@ -193,8 +193,6 @@ There's heaps of other packages in Atom which you might find useful, particular 
 
 I quite like the default theme, but if it's not your style there's a number of other themes to choose from and install.
 
-
-
 ## Conclusion
 
 We've installed Node.js and MongoDB, and also setup git for our version control. We're going to need to use a lot more software as we develop our web application, but thankfully, the rest of the packages can be installed easily using `npm`. I'll cover them in later guides, where we setup our own web server from scratch.
