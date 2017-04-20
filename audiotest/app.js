@@ -13,7 +13,7 @@ app.controller('audioDemo',['$scope', 'ngAudio', function($scope, ngAudio){
        if ($scope.spectrogram.height && $scope.spectrogram.maxFreq) {
            var freq = $scope.getCoord(1,val);
            var ratio = 1 - freq / $scope.spectrogram.height;
-           var val = (ratio * $scope.spectrogram.maxFreq/100).toFixed(2);
+           var val = (ratio * $scope.spectrogram.maxFreq/1000).toFixed(2);
            return (isNaN(val))? 0 + "kHz" : val +"kHz";
        }
        return 0;
