@@ -5,24 +5,28 @@
   <title>Birdsong</title>
   <script type = "text/javascript" src="node_modules/angular/angular.js"></script>
   <script type = "text/javascript" src="node_modules/angular-audio/app/angular.audio.js"></script>
-
+  <script type = "text/javascript" src="app.js"></script>
 </head>
-<body>
-    <div ng-controller='audioDemo'>
-    <button ng-click='audio.paused ? audio.play() : audio.pause()'>Pause</button>
-    <button ng-click='audio.restart()'>Stop</button>
-    <button ng-click='audio.muting = !audio.muting'>Mute</button>
+<body ng-controller='audioDemo'>
+    <div>
+        <button ng-click='audio.paused ? audio.play() : audio.pause()'>Pause</button>
+        <button ng-click='audio.restart()'>Stop</button>
+        <button ng-click='audio.muting = !audio.muting'>Mute</button>
 
-    <label>Current Time</label>
-    <input class='form-control' type=text ng-model='audio.currentTime'>
-    <label>Volume</label>
-    <input class='form-control' type=range min=0 max=1 step=0.01 ng-model='audio.volume'>
+        <label>Current Time</label>
+        <input class='form-control' type=text ng-model='audio.currentTime'>
+        <label>Volume</label>
+        <input class='form-control' type=range min=0 max=1 step=0.01 ng-model='audio.volume'>
     </div>
-    <script>
-    angular.module('audiotest',['ngAudio'])
-    .controller('audioDemo',function($scope,ngAudio){
-       $scope.audio = ngAudio.load('birdcall.mp3');
-    })
-    </script>
+    <style>
+        #tagContainer { position: relative; }
+        canvas.tagging { position: absolute; top: 0; left: 0; }
+    </style>
+    <p>Time: Start - {{ getTime(0) || 0 }}, End - {{ getTime(1) || 0 }}</p>
+    <p>Freq: Start - {{ getFreq(0) || 0 }}, End - {{ getFreq(1) || 0 }}</p>
+    <div id="tagContainer" ng-Mousedown="startBox($event)" ng-Mousemove="moveBox($event)" ng-Mouseup ="endBox($event)">
+        <canvas class="tagging" id="progress" back-img="{{spectrogram.src}}"></canvas>
+        <canvas class="tagging" id="spectrogram" style="border: 1px gray solid; float: left" ></canvas>
+    <div>
 </body>
 </html>
