@@ -198,7 +198,7 @@ With that, our basic API is finished. Now it's time to update the front-end to m
 
 ## Making HTTP requests from AngularJS
 
-Our server-side API is setup to listen for HTTP requests on `/birdAPI`. So now we need to tell AngularJS to make these requests from the front-end.gred
+Our server-side API is setup to listen for HTTP requests on `/birdAPI`. So now we need to tell AngularJS to make these requests from the front-end.
 
 The first change we need to make is to update out bird controller by *injecting* the `$http`. These is similar to the concept of including or importing external code. Edit the line were we declare the BirdsController in `app.js` to be as follows:
 
