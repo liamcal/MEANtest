@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="birds">
+<head>
+  <meta charset="UTF-8">
+  <title>Birdsong</title>
+  <link type="text/css" rel="stylesheet" href="angular-flash.css" />
+  <script type = "text/javascript" src="node_modules/angular/angular.js"></script>
+  <script src="angular-flash.js"></script>
+  <script type = "text/javascript" src = "app.js"></script>
+</head>
+<body >
+  <h1>Your one-stop shop for avian audio!</h1>
+  <flash-message></flash-message>
+  <ul class="nav navbar-nav navbar-right" ng-controller="LoginController">
+      <div ng-hide="isLoggedIn"><div ng-include="'login.html'"></div></div>
+      <div ng-show="isLoggedIn">
+          <p>Welcome: {{ currentUser.username }}!</p>
+          <button ng-click="logout()">Log Out</button>
+      </div>
+  </ul>
+  <div id="container" ng-controller="BirdsController">
+        <div id = "subheading">
+            <h2>Birds Registered {{ birds.length }}</h1>
+        </div>
+        <div id ="search">
+            <input type = "text" placeholder = "search" name = "search" ng-model = "searchTerm" ng-change = "filter()">
+        </div>
+        <div id="birds-list">
+            <div>
+                <div class="bird-entries" ng-repeat="bird in birds">
+                        {{ bird.name }} - {{ bird.bird }}: {{ bird.username }}
+                        <button ng-show = "bird.username == currentUser.username" ng-click="deleteBird(bird._id)">Delete</button>
+
+                </div>
+            </div>
+        </div>
+        <div ng-show="isLoggedIn">
+            <p>Name: {{ formData.name }}</p>
+            <p>Bird: {{ formData.bird }}</p>
+            <div>
+                <form>
+                    <input type="text" placeholder="name" name="name" ng-model = "formData.name">
+                    <input type="text" placeholder="bird" name="bird" ng-model = "formData.bird">
+                    <button type="submit" ng-click = "createBird()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

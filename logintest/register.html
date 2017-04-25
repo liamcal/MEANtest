@@ -1,0 +1,11 @@
+<form ng-controller = "RegisterController">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Enter your username" ng-model="formData.username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password"id="password" placeholder="Password" ng-model="formData.password">
+  </div>
+  <button type="submit" ng-click = "register()">Register!</button>
+</form>
