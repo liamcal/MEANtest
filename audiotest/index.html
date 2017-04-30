@@ -23,7 +23,7 @@
         canvas.tagging { position: absolute; top: 0; left: 0; }
     </style>
     <p>Time: Start - {{ getTime(0) || 0 }}, End - {{ getTime(1) || 0 }}</p>
-    <p>Freq: Start - {{ getFreq(0) || 0 }}, End - {{ getFreq(1) || 0 }}</p>
+    <p>Freq: Start - {{ getFreq(1) || 0 }}, End - {{ getFreq(0) || 0 }}</p>
     <div id="tagContainer" ng-Mousedown="startBox($event)" ng-Mousemove="moveBox($event)" ng-Mouseup ="endBox($event)">
         <canvas class="tagging" id="progress" back-img="{{spectrogram.src}}"></canvas>
         <canvas class="tagging" id="spectrogram" style="border: 1px gray solid; float: left" ></canvas>
