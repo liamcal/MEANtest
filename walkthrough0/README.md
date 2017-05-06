@@ -21,7 +21,7 @@ The terminal prompt might be different for your environment. You do not need to 
 
 Node is the javascript runtime engine we will be using for the web server. We will also be using the Node Package Manager (npm) for a lot server setup and maintenance.
 
-First go to http://nodejs.ord/en and download the installer for the LTS version (currently 6.10.2).
+First go to http://nodejs.org/en and download the installer for the LTS version (currently 6.10.2).
 
 Run the installer and select all the default settings.
 
